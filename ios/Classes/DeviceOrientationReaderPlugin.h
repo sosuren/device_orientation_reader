@@ -1,4 +1,4 @@
 #import <Flutter/Flutter.h>
 
-@interface DeviceOrientationReaderPlugin : NSObject<FlutterPlugin>
+@interface DeviceOrientationReaderPlugin : NSObject<FlutterPlugin, FlutterStreamHandler>
 @end

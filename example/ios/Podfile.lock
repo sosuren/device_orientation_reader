@@ -1,0 +1,22 @@
+PODS:
+  - device_orientation_reader (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - device_orientation_reader (from `.symlinks/plugins/device_orientation_reader/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+
+EXTERNAL SOURCES:
+  device_orientation_reader:
+    :path: ".symlinks/plugins/device_orientation_reader/ios"
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+
+SPEC CHECKSUMS:
+  device_orientation_reader: 17c4ce68b2cc313ccf81129fb4c4ecd3023d7b6e
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+
+PODFILE CHECKSUM: 7fb83752f59ead6285236625b82473f90b1cb932
+
+COCOAPODS: 1.7.5
