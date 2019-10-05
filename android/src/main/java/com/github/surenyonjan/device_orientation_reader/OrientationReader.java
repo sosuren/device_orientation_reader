@@ -1,6 +1,5 @@
 package com.github.surenyonjan.device_orientation_reader;
 
-import android.util.Log;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.hardware.SensorManager;
@@ -35,7 +34,6 @@ public class OrientationReader {
     //Checks if device is flat on ground or not
     int inclination = (int) Math.round(Math.toDegrees(Math.acos(inclineGravity[2])));
 
-    Log.i("Inclination", String.format("%d", inclination));
     if (inclination < 25) {
       return Orientation.FaceUp;
     } else if (inclination > 140) {
