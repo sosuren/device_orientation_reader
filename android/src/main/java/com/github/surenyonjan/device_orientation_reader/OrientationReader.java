@@ -35,31 +35,26 @@ public class OrientationReader {
     int inclination = (int) Math.round(Math.toDegrees(Math.acos(inclineGravity[2])));
 
     if (inclination < 25) {
-      return Orientation.FaceUp;
+      actualOrientation = Orientation.FaceUp;
     } else if (inclination > 140) {
-      return Orientation.FaceDown;
-    }
+      actualOrientation = Orientation.FaceDown;
+    } else {
 
-    final int rotation = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRotation();
-    final int orientation = context.getResources().getConfiguration().orientation;
-
-    switch (orientation) {
-      case Configuration.ORIENTATION_PORTRAIT:
-        if (rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_90) {
-          actualOrientation = Orientation.PortraitUp;
-        } else {
-          actualOrientation = Orientation.PortraitDown;
-        }
-        break;
-      case Configuration.ORIENTATION_LANDSCAPE:
-        if (rotation == Surface.ROTATION_0 || rotation == Surface.ROTATION_90) {
-          actualOrientation = Orientation.LandscapeLeft;
-        } else {
+      if (Math.abs(mGravity[0]) > Math.abs(mGravity[1])) {
+        // we are in landscape-mode
+        if (mGravity[0] >= 0) {
           actualOrientation = Orientation.LandscapeRight;
+        } else {
+          actualOrientation = Orientation.LandscapeLeft;
         }
-        break;
-      default:
-        actualOrientation = Orientation.Unknown;
+      } else {
+        // we are in portrait mode
+        if (mGravity[1] >= 0) {
+          actualOrientation = Orientation.PortraitDown;
+        } else {
+          actualOrientation = Orientation.PortraitUp;
+        }
+      }
     }
 
     return actualOrientation;
