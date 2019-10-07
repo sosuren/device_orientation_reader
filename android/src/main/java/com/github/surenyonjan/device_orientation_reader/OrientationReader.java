@@ -43,16 +43,16 @@ public class OrientationReader {
       if (Math.abs(mGravity[0]) > Math.abs(mGravity[1])) {
         // we are in landscape-mode
         if (mGravity[0] >= 0) {
-          actualOrientation = Orientation.LandscapeRight;
-        } else {
           actualOrientation = Orientation.LandscapeLeft;
+        } else {
+          actualOrientation = Orientation.LandscapeRight;
         }
       } else {
         // we are in portrait mode
         if (mGravity[1] >= 0) {
-          actualOrientation = Orientation.PortraitDown;
-        } else {
           actualOrientation = Orientation.PortraitUp;
+        } else {
+          actualOrientation = Orientation.PortraitDown;
         }
       }
     }
